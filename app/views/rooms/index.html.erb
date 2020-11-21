@@ -1,0 +1,24 @@
+<div class="main room">
+  <div class="container">
+    <h1 class="form-heading">チャットルーム</h1>
+    <div class="form-error">
+      <%= @error_message %>
+    </div>
+
+    <%= form_tag("/rooms/index") do %>
+      <input name="name" value="">
+      <input type="submit" value="チャットルーム作成">
+    <% end %>
+
+    <%= form_tag("/rooms/index/destroy_room") do %>
+      <input name="name" value="">
+      <input type="submit" value="ルーム名を入力して削除">
+    <% end %>
+
+    <% @rooms.each do |room| %>
+      <div class="rooms-index-item">
+        <li><%= link_to "#{room.name}", "/rooms/#{room.id}" %></li>
+      </div>
+    <% end %>
+  </div>
+</div>

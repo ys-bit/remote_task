@@ -1,0 +1,12 @@
+<div class="main room">
+  <div class="container">
+    <h1><%= "#{@room.name}" %></h1>
+    <div id='messages' data-room_id="<%= @room.id %>">
+      <%= render partial: 'messages/message', collection: @messages %>
+    </div>
+
+    <%= link_to("コメントをリセット", "/rooms/#{@room.id}/destroy", {method: "post"}) %>
+    <%= label_tag :content, 'コメント入力:' %>
+    <%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>
+  </div>
+</div>

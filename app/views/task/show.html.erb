@@ -1,0 +1,22 @@
+<div class="main tasks-show">
+  <div class="container">
+    <div class="tasks-show-item">
+      <div class="task-user-name">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+        <%= link_to(@user.name, "/user/#{@user.id}") %>
+      </div>
+      <p>
+        <%= @task.content %>
+      </p>
+      <div class="task-item">
+        <%= @task.created_at %>
+      </div>
+      <% if @task.user_id == @current_user.id %>
+        <div class="task-menus">
+          <%= link_to("編集", "/task/#{@task.id}/edit") %>
+          <%= link_to("削除", "/task/#{@task.id}/destroy", {method: "post"}) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

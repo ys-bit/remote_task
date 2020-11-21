@@ -1,0 +1,27 @@
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <img src="<%= "/user_images/#{@users.image_name}" %>">
+      <h2><%= @users.name %></h2>
+      <p><%= @users.email %></p>
+      <% if @users.id == @current_user.id %>
+        <%= link_to("編集", "/user/#{@users.id}/edit") %>
+        <%= link_to("削除", "/user/#{@users.id}/destroy", {method: "post"}) %>
+      <% end %>
+    </div>
+
+    <% @users.tasks.each do |task| %>
+      <div class="tasks-index-item">
+        <div class="task-left">
+          <img src="<%= "/user_images/#{task.user.image_name}" %>">
+        </div>
+        <div class="task-right">
+          <div class="task-user-name">
+            <%= link_to(task.user.name, "/user/#{task.user.id}") %>
+          </div>
+            <%= link_to(task.content, "/task/#{task.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
