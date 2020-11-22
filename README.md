@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* Requirement
+* Requirement  
 Ruby 2.7.2  
 Rails 6.0.3  
 SQlite 3.28.0
