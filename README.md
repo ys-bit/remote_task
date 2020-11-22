@@ -1,9 +1,7 @@
-# README
-
 # name  
 RemoteTask
 
-* Requirement  
+# Requirement  
 Ruby 2.7.2  
 Rails 6.0.3  
 SQlite 3.28.0
