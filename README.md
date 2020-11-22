@@ -5,8 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version  
-2
+* system version  
+Ruby 2.7.2  
+Rails 6.0.3  
+SQlite 3.28.0
 
 * System dependencies
 
